@@ -1,0 +1,24 @@
+# Fungsi dengan parameter, mengembalikan (angka, akhiran)
+def ordinal(n):
+    if 10 <= n % 100 <= 20:
+        akhiran = "th"
+    elif n % 10 == 1:
+        akhiran = "st"
+    elif n % 10 == 2:
+        akhiran = "nd"
+    elif n % 10 == 3:
+        akhiran = "rd"
+    else:
+        akhiran = "th"
+    return n, akhiran
+
+print("Ordinal Number")
+print("ketik 0 untuk mengentikan program")
+
+while True:
+    angka = int(input("masukkan angka: "))
+    print(ordinal(angka))
+    if angka == 0:
+        break
+
+print("terima kasih telah menggunakan program saya")
