@@ -1,0 +1,26 @@
+# Fungsi dengan default parameter + return
+def konversi_nilai(huruf, skala="4.00"):
+    nilai = {"A": 4, "B": 3, "C": 2, "D": 1, "E": 0}
+    return nilai.get(huruf.upper(), None)
+
+def hitung_rata(total=0, jumlah=0):
+    if jumlah == 0:
+        return 0
+    return total / jumlah
+
+total = 0
+jumlah = 0
+
+while True:
+    huruf = input("masukkan nilai: ")
+    if huruf == "":
+        break
+    angka = konversi_nilai(huruf)
+    if angka is None:
+        print("Huruf tidak valid, masukkan A/B/C/D/E")
+        continue
+    print("nilai =", angka)
+    total += angka
+    jumlah += 1
+
+print("Rata-ratanya adalah: ", hitung_rata(total, jumlah))
